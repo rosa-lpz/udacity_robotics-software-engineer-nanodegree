@@ -11,3 +11,12 @@ Prior to enrolling, you should have the following knowledge:
 * Basic descriptive statistics
 * Basic calculus
 * Lidar
+
+## Curriculum
+* Introduction to Robotics
+* Gazebo World
+* ROS Essentials
+* Localization
+* Mapping and SLAM
+* Path Planning and Navigation
+* Optional KUKA Path Planning Project
