@@ -93,3 +93,35 @@ Publishing to a topic is the core of ROS's pub-sub architecture, enabling data e
 * It provides a flexible way for nodes to share data using topics
 
 The p*ub-sub architecture's flexibility makes it ideal for robotics, as nodes can publish and subscribe to topics independently, enabling seamless communication in complex systems.
+
+
+# Message Passing
+Each ROS distribution comes with a variety of predefined messages. Over 200 different messages types. Messages can contain any kind of data.
+In addition to the default message types, you can define your own custom messages.
+
+## Physical quanitties
+* Positions
+* Velocities
+* Accelerations
+* Rotations
+* Durations
+
+## Sensor readings
+* Laser scans
+* Images
+* Point Clouds
+* Inertial Measurements
+
+![alt text](1.5_messages/1.png)
+
+## Questions
+### Which of the following statements about ROS messages are correct?
+* Messages come in hundreds of different types and may contain many different types of data.
+* In addition to the default message types, you can define your own custom messages.
+
+
+# Services
+
+
+# Compute Graph
+Tool: RQT graph
