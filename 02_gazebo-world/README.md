@@ -220,3 +220,113 @@ The Menu: Some of the menu options are duplicated in the Toolbars or as right-cl
 
 
 ![menu](1.6_gui/menu.png)
+
+
+# Simulating the First Robot
+
+### 1- Create directories for the world and model files
+```bash
+mkdir -p /home/workspace/myrobot
+cd /home/workspace/myrobot
+mkdir world model # or  'mkdir world && mdir model'
+gazebo
+```
+Command Explanation:
+
+* mkdir: A command used to create one or more directories.
+* -p: (parent option): Ensures any missing parent directories in the  specified path are created automatically.
+* cd: A command used to change the working directory.
+
+## Construct the Robot's Chassis
+
+### 2- Launch Gazebo and switch to the Model Editor
+First, launch Gazebo from the terminal:
+```bash
+$ gazebo
+```
+In Gazebo, click on edit -> Model Editor.
+
+### 3- Create the robot chassis
+In the model editor, drop a box anywhere in the scene and double click it to change its position and dimension as follows: Make sure to scroll down to the bottom to edit the object position
+
+* Position: [X, Y, Z] = [0, 0, 0.2]
+* Visual and Collision geometry: [X, Y, Z] = [0.3, 1.0, 0.1]
+
+
+## Attach Wheels to the Robot's Chassis
+
+### 4- Construct the robot wheels
+Insert a cylinder inside the scene and then edit its position and orientation: Make sure to scroll down to the bottom to edit the object position.
+
+Z pose = 0.2
+Roll = 1.5707 rad
+Visual and Collision geometry: [Radius, Length] = [0.2, 0.1]
+Then, create a copy of this wheel and paste it on the other side of the robot.
+
+### 5- Connect wheels to the chassis via joints
+Joint Types: Revolute
+Parent: Chassis
+Child: Wheel
+Joint Axis: Z
+Align Links Joint 1: mid x; minimum y and reverse
+Align Links Joint 2: mid x; maximum y and reverse
+
+### 6- Save the model file
+Model: Save it as robot in /home/workspace/myrobot/model
+Exit the Model Editor
+
+### 7- Save the world file
+World: Save is as myworld in /home/workspace/myrobot/world
+Exit Gazebo
+Launching Gazebo world file from disk
+To load the world file with Gazebo open a terminal, change the working directory and launch it:
+
+```bash
+$ cd /home/workspace/myrobot/world/           
+$ gazebo myworld  
+```
+
+
+### SDF Format
+As you learned earlier, world and model files in Gazebo are formatted using the Simulation Description Format or SDF(opens in a new tab) for short. You can now open the contents of either the world file or model file and check to see if it follows the SDF format. To open the contents of the world file inside a terminal type in the following:
+```bash
+$ cd /home/workspace/myrobot/world/           
+$ gedit myworld  
+```
+
+Note: For local installation users only, please run the following command to install gedit before executing the previous command:
+```bash
+sudo apt-get install gedit
+```
+
+
+The SDF format in this world file should follow this general structure:
+
+```bash
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <world name="default">
+      <physics type="ode">
+        ...
+      </physics>
+
+      <scene>
+        ...
+      </scene>
+
+      <model name="box">
+        ...
+      </model>
+
+      <model name="sphere">
+        ...
+      </model>
+
+      <light name="spotlight">
+        ...
+      </light>
+
+    </world>
+</sdf>
+```
+Next, you will learn how to write a Plugin to interact with your World in Gazebo.
