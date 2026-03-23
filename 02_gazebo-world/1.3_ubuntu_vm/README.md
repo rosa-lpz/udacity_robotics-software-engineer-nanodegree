@@ -17,7 +17,3 @@ However, you can install more tools as necessary for the classroom exercises or 
 An important aspect is that the VM workspace has several restrictions, as explained below. You must read the restrictions and best practices below before you plan your work in the VM workspace.
 
 
-Username: ubuntu
-Password: ubuntu
-Username: labsuser
-Password: vocareum
