@@ -63,7 +63,6 @@ In addition to allowing nodes to locate one another and communicate, the ROS mas
 Rather than storing the same information in multiple places, nodes can look up the value as needed. Nodes can also share data, with one another by passing messages over what are called **topics**.
 
 
-
 ## Topics
 You can think of a topic as a pipe between nodes, through which messages flow. In order to send a message on a topic, wa say that node must publish to that topic. Likewise, to receive a message on a topic, a node must subscribe to that topic.
 
@@ -74,8 +73,23 @@ You can think of a topic as a pipe between nodes, through which messages flow. I
 
 
 ## Questions
-* What are the three high-level tasks performed by most robots?
+### What are the three high-level tasks performed by most robots?
     * Perception, decision-making, and actuation
 
-* Each ROS node handles multiple high-level functionalities?
+### Each ROS node handles multiple high-level functionalities?
     * False
+### What is the role of the ROS master?
+    * True: It helps nodes discover each other and maintain a registry of active nodes.
+
+* Nodes communicate directly via topics after discovery. The ROS master does not handle message transfer.
+* The ROS master doesn't process data; it only keeps track of node registrations.
+* Motor control responsibility can be assigned to a ROS node, not the ROS master.
+
+### A node must publish to a topic to send a message.
+* True
+Publishing to a topic is the core of ROS's pub-sub architecture, enabling data exchange between nodes.
+
+### What is the main benefit of the pub-sub architecture?
+* It provides a flexible way for nodes to share data using topics
+
+The p*ub-sub architecture's flexibility makes it ideal for robotics, as nodes can publish and subscribe to topics independently, enabling seamless communication in complex systems.
