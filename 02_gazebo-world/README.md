@@ -19,6 +19,24 @@ Cloud Simulation: Run Gazebo on a server and interact with it through a browser.
 Command Line Tools: Control your simulated environment through the command line tools.
 This lesson will focus on Gazebo’s four main features including Dynamics Simulation, Advanced 3D Graphics, Plugins, and Model Database. For more information on Gazebo and its history visit the Gazebo website(opens in a new tab).
 
+# VM Workspace - Overview
+The VM workspace is an Ubuntu 20.04 machine with NVIDIA Tesla T4 GPU support. It has all the necessary tools installed that you will need to run the exercises and the project in this course. For example, it has the following major tools and corresponding configurations:
+
+* CARLA simulator 0.9.9.4(opens in a new tab)
+NICE DCV Server(opens in a new tab). This includes the Nvidia drivers along with CUDA libraries for the underlying Tesla T4 GPU
+* C++
+* Git
+* OpenCV(opens in a new tab)
+* CMake(opens in a new tab) and Make
+* VSCode(opens in a new tab)
+* Eigen Library for C++(opens in a new tab)
+* Point Cloud Library(opens in a new tab)
+* Python3 and Pip
+* ROS
+However, you can install more tools as necessary for the classroom exercises or the project.
+
+An important aspect is that the VM workspace has several restrictions, as explained below. You must read the restrictions and best practices below before you plan your work in the VM workspace.
+
 # Gazebo Components
 
 There are six components involved in running an instance of a Gazebo simulation:
@@ -252,6 +270,9 @@ In the model editor, drop a box anywhere in the scene and double click it to cha
 * Position: [X, Y, Z] = [0, 0, 0.2]
 * Visual and Collision geometry: [X, Y, Z] = [0.3, 1.0, 0.1]
 
+Definitions
+* Visual aspect of an object: Graphic representation and does not affect the physic simulation
+* Collition aspect of an object: Is used by the physics engine for collision checking  
 
 ## Attach Wheels to the Robot's Chassis
 
@@ -286,6 +307,12 @@ $ cd /home/workspace/myrobot/world/
 $ gazebo myworld  
 ```
 
+## Launching Gazebo world file from disk
+To load the world file with Gazebo open a terminal, change the working directory and launch it:
+```bash
+$ cd /home/workspace/myrobot/world/           
+$ gazebo myworld  
+```
 
 ### SDF Format
 As you learned earlier, world and model files in Gazebo are formatted using the Simulation Description Format or SDF(opens in a new tab) for short. You can now open the contents of either the world file or model file and check to see if it follows the SDF format. To open the contents of the world file inside a terminal type in the following:
@@ -330,3 +357,32 @@ The SDF format in this world file should follow this general structure:
 </sdf>
 ```
 Next, you will learn how to write a Plugin to interact with your World in Gazebo.
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <world name="default">
+      <physics type="ode">
+        ...
+      </physics>
+
+      <scene>
+        ...
+      </scene>
+
+      <model name="box">
+        ...
+      </model>
+
+      <model name="sphere">
+        ...
+      </model>
+
+      <light name="spotlight">
+        ...
+      </light>
+
+    </world>
+</sdf>
+}
+
+
+# Writing a Plugin
