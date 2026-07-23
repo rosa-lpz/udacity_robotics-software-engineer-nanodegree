@@ -1,22 +1,18 @@
-# Udacity - Robotics Software Engineer Nanodegree 
-Repository the Robotics Software Engineer Nanodegree program from Udacity. 
+# Udacity - Robotics and Autonomous Systems Nanodegrees 
+Repository Robotics and Autonomous Systems Nanodegrees from Udacity
 
-## Overview
-Learn how to build and program intelligent robots with this Robotics Software Engineer Nanodegree. Master ROS, path planning, and environment mapping through projects led by experts.
 
-## Prerequisites
-Prior to enrolling, you should have the following knowledge:
-* Basic C++
-* Linear Algebra
-* Basic descriptive statistics
-* Basic calculus
-* Lidar
 
-## Curriculum
-* Introduction to Robotics
-* Gazebo World
-* ROS Essentials
-* Localization
-* Mapping and SLAM
-* Path Planning and Navigation
-* Optional KUKA Path Planning Project
+## Nanodegrees programs
+
+* Introduction to Robotics Nanodegree
+* Robotics Software Engineer Nanodegree
+* Introduction to Self-Driving Cars Nanodegree
+* Self Driving Car Engineer Nanodegree
+* Sensor Fusion Nanodegree
+
+## Courses
+
+* Intro to Physics
+* C Programming
+* C/C++ Data Structures
